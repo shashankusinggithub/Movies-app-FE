@@ -22,7 +22,7 @@ const PlaylistPage = () => {
   const [movies, setMovies] = React.useState([]);
   useEffect(() => {
     getMovies();
-  }, []);
+  }, [1]);
 
   const getMovies = async () => {
     setLoading(true);
@@ -98,20 +98,7 @@ const PlaylistPage = () => {
   };
 
   const handleRemoveFromPlaylist = (item) => {
-    // console.log(item, movies);
-    // setMovies((playlists) => {
-    //   let temp = playlists.map((playlist) => {
-    //     if (item.playid === playlist._id) {
-    //       let movies = playlist.playlist.filter(
-    //         (movie) => JSON.stringify(movie) !== JSON.stringify(item.movie)
-    //       );
-    //       return { ...playlist, playlist: movies };
-    //     }
-    //     return { ...playlist };
-    //   });
-    //   return temp;
-    // });
-    // getMovies();
+    getMovies();
   };
 
   return (

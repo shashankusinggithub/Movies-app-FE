@@ -24,7 +24,7 @@ const Playlistbox = (props) => {
     getDetails();
     getPlaylists();
     setLoading(false);
-  }, []);
+  }, [1]);
 
   const getDetails = async () => {
     setLoading(true);
