@@ -2,10 +2,12 @@ import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
+import Spinner from "react-spinkit";
 
 const Login = () => {
   const [data, setData] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleChange = ({ currentTarget: input }) => {
     setData({ ...data, [input.name]: input.value });
@@ -14,11 +16,11 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      setLoading(true);
       const { data: res } = await axios.post("/auth", data);
-      console.log(res.data);
       localStorage.setItem("token", res.data);
-      console.log(res.data);
       window.location = "/";
+      setLoading(false);
     } catch (error) {
       if (
         error.response &&
@@ -27,6 +29,7 @@ const Login = () => {
       ) {
         setError(error.response.data.message);
       }
+      setLoading(false);
     }
   };
 
@@ -58,6 +61,13 @@ const Login = () => {
             <button type="submit" className={styles.green_btn}>
               Sign In
             </button>
+            {loading && (
+              <Spinner
+                name="circle"
+                className={styles.login_spinner}
+                style={{ width: 50, height: 50 }}
+              />
+            )}
           </form>
         </div>
         <div className={styles.right}>

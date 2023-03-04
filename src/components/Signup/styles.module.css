@@ -7,6 +7,11 @@
 	justify-content: center;
 }
 
+.login_spinner, .signup_spinner{
+	margin-top: 10px;
+	color: whitesmoke;
+}
+
 .signup_form_container {
 	text-align: center;
 	width: 100vw;
