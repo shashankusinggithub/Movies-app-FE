@@ -1,0 +1,41 @@
+.spinner {
+  color:red;
+  padding: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2vh;
+}
+
+  .playlistlist{
+    padding: 30px;
+    position: absolute;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x:scroll;
+	overflow-y:scroll;
+  height: 30vmax;
+  max-height:300px;
+    
+    right:0px;
+    
+    flex-direction: column;
+    background: white;
+  }
+
+ 
+  .playlistimgopen{
+    position: absolute;
+    height: 30px;
+    right:0px
+  }
+  .createplaylisttype{
+    width: 100px;
+  }
+
+  .playlistbox{
+    position: absolute;
+    /* right: 50px; */
+  }
+
+  
+ 
