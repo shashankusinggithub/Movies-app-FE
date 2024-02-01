@@ -22,7 +22,7 @@ const Signup = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const url = '/users';
+            const url = 'users';
             setLoading(true);
             const {data: res} = await axios.post(url, data);
             setLoading(false);
