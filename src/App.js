@@ -9,7 +9,7 @@ import axios from 'axios';
 
 function App() {
     const user = localStorage.getItem('token');
-    axios.defaults.baseURL = process.env.BACKEND_URL;
+    axios.defaults.baseURL = String(process.env.REACT_APP_BACKEND_URL);
 
     return (
         <Routes className="body">
