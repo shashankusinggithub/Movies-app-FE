@@ -6,7 +6,7 @@ import {BrowserRouter} from 'react-router-dom';
 import axios from 'axios';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-axios.defaults.baseURL = String(process.env.REACT_APP_BACKEND_URL);
+axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URL;
 
 root.render(
     <React.StrictMode>
