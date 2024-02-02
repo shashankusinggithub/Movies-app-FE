@@ -5,11 +5,9 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import Playlist from './components/Playlists';
-import axios from 'axios';
 
 function App() {
     const user = localStorage.getItem('token');
-    axios.defaults.baseURL = String(process.env.REACT_APP_BACKEND_URL);
 
     return (
         <Routes className="body">
