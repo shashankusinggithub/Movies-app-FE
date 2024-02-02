@@ -17,7 +17,7 @@ const Login = () => {
         e.preventDefault();
         try {
             setLoading(true);
-            const {data: res} = await axios.post('/auth', data);
+            const {data: res} = await axios.post('auth', data);
             localStorage.setItem('token', res.data);
             window.location = '/';
             setLoading(false);
