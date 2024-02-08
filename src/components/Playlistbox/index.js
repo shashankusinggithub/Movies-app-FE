@@ -7,6 +7,7 @@ import Spinner from 'react-spinkit';
 
 const Playlistbox = (props) => {
     // header and token
+    const movieChanged = document.getElementById('movieSearch') ? document.getElementById('movieSearch').value : '';
 
     const token = localStorage.getItem('token');
     const headers = {
@@ -26,6 +27,10 @@ const Playlistbox = (props) => {
         getPlaylists();
         setLoading(false);
     }, [1]);
+
+    useEffect(() => {
+        setPlaylistDisplay(false);
+    }, [movieChanged]);
 
     useEffect(() => {
         setLoading(true);
